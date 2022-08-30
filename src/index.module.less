@@ -1,0 +1,131 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font: 20px/1 "HanHei SC", PingHei, "PingFang SC", STHeitiSC-Light, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  direction: ltr;
+  text-align: left;
+  background: #009688;
+  cursor: default;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga", "kern";
+}
+
+:global{
+  .r{
+    float: right;
+  }
+  .l{
+    float: left;
+  }
+
+  .clear{
+    clear: both;
+  }
+
+  .bg{
+    overflow:hidden;
+    background:url('../assets/imgs/TB1qq7kNXXXXXacXFXXXXXXXXXX-400-186.png') no-repeat;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none; 
+}
+
+.app {
+  position: absolute;
+  top: 50%;
+  left: 50%;  
+  width: 640px;
+  margin: -480px 0 0 -320px;
+  padding-top: 42px;
+  background: #efcc19; 
+  border-radius: 20px;
+  box-shadow: 0 0 10px #fff inset;
+
+  :global{
+    b {
+      display: block;
+      float: left;
+      width: 20px;
+      height: 20px;
+      margin: 0 2px 2px 0;
+      padding: 2px;
+      border: 2px solid #879372;
+      &:after {
+        display: block;
+        width: 12px;
+        height: 12px;
+        overflow: hidden;
+        background: #879372;
+        content: '';
+      }
+      &.c {
+        border-color: #000;
+        &:after {
+          background: #000;
+        }
+      }
+      &.d {
+        border-color: #560000;
+        &:after {
+          background: #560000;
+        }
+      }
+    }
+  }
+}
+
+.rect{
+  position: relative;
+  width: 480px;
+  margin: 0 auto;
+  padding: 45px 0 35px;
+  border: #000 solid;
+  border-width: 0 10px 10px;
+  &.drop{ -webkit-transform:translateY(5px);transform:translateY(5px); }
+
+}
+
+.screen{
+  position: relative;
+  width: 390px;
+  height: 478px;
+  margin: 0 auto;
+  border: solid 5px;
+  border-color: #987f0f #fae36c #fae36c #987f0f;
+  .panel{
+    width: 380px;
+    height: 468px;
+    margin: 0 auto;
+    padding: 8px;
+    background: #9ead86;
+    border: 2px solid #494536;
+  }
+}
+
+.state {
+  position: absolute;
+  top: 0;
+  right: 15px;
+  width: 108px;
+  p {
+    clear: both;
+    height: 57px;
+    padding: 10px 0 0;
+    line-height: 47px;
+    white-space: nowrap;
+  }
+  .bottom {
+    position: absolute;
+    top: 426px;
+    left: 0;
+    width: 114px;
+  }
+}
