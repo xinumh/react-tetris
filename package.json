@@ -36,8 +36,8 @@
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.10.0"
   },
-  "dependencies": {
-    "@reduxjs/toolkit": "^1.8.5",
+  "depeedndencies": {
+    "@ruxjs/toolkit": "^1.8.5",
     "immutable": "^4.1.0",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
