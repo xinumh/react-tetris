@@ -1,3 +1,5 @@
+import { List } from 'immutable'
+
 export const transform = (function () {
   const trans = [
     'transform',
@@ -79,3 +81,15 @@ export const blockShape: any = {
 }
 
 export const blockType = Object.keys(blockShape)
+
+export const blankLine = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+const blankMatrix = (() => {
+  const matrix = []
+  for (let i = 0; i < 20; i++) {
+    matrix.push(List(blankLine))
+  }
+  return List(matrix)
+})()
+
+export { blankMatrix }

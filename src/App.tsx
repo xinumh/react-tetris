@@ -1,43 +1,35 @@
 import React from 'react'
-import classnames from 'classnames'
 import useResizeCss from '@/hooks/useResizeCss'
+import classnames from 'classnames'
 import { useAppSelector, useAppDispatch } from '@/store/hooks'
+import { createMatrix } from '@/store/features/matrixSlice'
+import Matrix from './components/Matrix'
+import useStart from './hooks/useStart'
 import style from './index.module.less'
-
-import { incrementByAmount, increment } from '@/store/features/counterSlice'
+import Decorate from './components/Decorate'
+// import states from './control/states'
 
 const App = () => {
-  const counter = useAppSelector((store) => store.counter)
-  const dispatch = useAppDispatch()
-  const store = useAppSelector((store) => store)
-  console.log('store', store)
+  const { matrix, cur } = useAppSelector((store) => store)
+  useStart()
   const { filling, cssResize } = useResizeCss()
-  const [input, setInput] = React.useState(0)
 
   return (
-    <>
-      <input
-        type='number'
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-          setInput(Number(e.target.value))
-        }
-      />
-      <button
-        onClick={() => {
-          dispatch(increment())
-        }}
+    <div className={style.app} style={cssResize}>
+      <div
+        className={classnames({
+          [style.rect]: true,
+          [style.drop]: true
+        })}
       >
-        加
-      </button>
-      <button
-        onClick={() => {
-          dispatch(incrementByAmount(input))
-        }}
-      >
-        加
-      </button>
-      {counter.value}
-    </>
+        <Decorate />
+        <div className={style.screen}>
+          <div className={style.panel}>
+            <Matrix matrix={matrix} cur={cur} />
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
 

@@ -1,9 +1,20 @@
 import { configureStore } from '@reduxjs/toolkit'
 import counterSlice from './features/counterSlice'
+import matrixSlice from './features/matrixSlice'
+import curSlice from './features/curSlice'
+import startLines from './features/startLines'
 
 const store = configureStore({
   reducer: {
-    counter: counterSlice
+    counter: counterSlice,
+    matrix: matrixSlice,
+    cur: curSlice,
+    startLines: startLines
+  },
+  middleware: (getDefaultMiddleware) => {
+    return getDefaultMiddleware({
+      serializableCheck: false
+    })
   }
 })
 
